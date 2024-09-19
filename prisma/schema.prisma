@@ -1,0 +1,18 @@
+   datasource db {
+     provider = "postgresql"
+     url      = env("DATABASE_URL")
+   }
+
+   generator client {
+     provider = "prisma-client-js"
+   }
+
+   model Image {
+     id                Int      @id @default(autoincrement())
+     userId            Int?
+     imageUrl          String
+     originalFilename  String
+     uploadDate        DateTime @default(now())
+     processingStatus  String   @default("pending")
+     tags              String[]
+   }
