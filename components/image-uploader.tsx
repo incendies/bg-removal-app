@@ -6,9 +6,11 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { removeBg } from '../app/actions'
 import { useRouter } from 'next/navigation'; // Import useRouter for navigation
+import { signIn, signOut, useSession } from "next-auth/react"; // Import signOut and useSession
 
 export function ImageUploader() {
   const router = useRouter(); // Initialize router for navigation
+  const { data: session } = useSession(); // Get session data
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
   const [processedImage, setProcessedImage] = useState<string | null>(null)
   const [isProcessing, setIsProcessing] = useState(false)
@@ -78,6 +80,11 @@ export function ImageUploader() {
         <h1 className="text-2xl font-bold">Background Image Processor</h1>
         <nav className="flex space-x-4">
           <Button onClick={() => router.push('/dashboard')}>Dashboard</Button>
+          {session ? (
+            <Button onClick={() => signOut()}>Sign Out</Button> // Use signOut here
+          ) : (
+            <Button onClick={() => signIn()}>Sign In</Button> // Use signIn here
+          )}
         </nav>
       </header>
 
