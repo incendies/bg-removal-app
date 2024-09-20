@@ -15,8 +15,8 @@ export async function removeBg(imageUrl: string) {
       input: {
         image_url: imageUrl,
         model: "General Use (Light)",
-        operating_resolution: "1024x1024",
-        output_format: "png"
+        operating_resolution: "1920x1024",
+        output_format: "jpg"
       },
     }) as { image: { url: string } };
 

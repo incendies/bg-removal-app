@@ -1,10 +1,10 @@
 'use client'
 
 import { useState, useCallback } from 'react'
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { removeBg } from '../app/actions'
+import { Button } from "../components/ui/button"
+import { Input } from "../components/ui/input"
+import { Label } from "../components/ui/label"
+import { removeBg } from '../actions'
 import { useRouter } from 'next/navigation'; // Import useRouter for navigation
 import { signIn, signOut, useSession } from "next-auth/react"; // Import signOut and useSession
 
@@ -83,7 +83,10 @@ export function ImageUploader() {
           {session ? (
             <Button onClick={() => signOut()}>Sign Out</Button> // Use signOut here
           ) : (
-            <Button onClick={() => signIn()}>Sign In</Button> // Use signIn here
+            <>
+              <Button onClick={() => router.push('/auth/signin')}>Sign In</Button>
+              <Button onClick={() => router.push('/auth/signup')}>Sign Up</Button>
+            </>
           )}
         </nav>
       </header>

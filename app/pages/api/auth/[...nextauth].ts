@@ -6,19 +6,21 @@ export default NextAuth({
     CredentialsProvider({
       name: "Credentials",
       credentials: {
-        username: { label: "Username", type: "text", placeholder: "jsmith" },
-        password: { label: "Password", type: "password" },
+        username: { label: "Username", type: "text" },
+        password: { label: "Password", type: "password" }
       },
       async authorize(credentials) {
-        // Replace this with your own logic to validate the user
-        if (credentials.username === "user" && credentials.password === "pass") {
-          return { id: 1, name: "User" }; // Return user object
+        // Add your own logic here to find the user from your database
+        if (credentials?.username === "user" && credentials?.password === "password") {
+          return { id: "1", name: "J Smith", email: "jsmith@example.com" };
+        } else {
+          return null;
         }
-        return null; // Return null if user not found
-      },
-    }),
+      }
+    })
   ],
   pages: {
-    signIn: '/auth/signin', // Custom sign-in page
+    signIn: "/auth/signin",
+    //signUp: "/auth/signup",
   },
 });
