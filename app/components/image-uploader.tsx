@@ -85,7 +85,7 @@ export function ImageUploader() {
           ) : (
             <>
               <Button onClick={() => router.push('/pages/auth/signin')}>Sign In</Button>
-              <Button onClick={() => router.push('/pages/auth/signup')}>Sign Up</Button>
+              {/* <Button onClick={() => router.push('/pages/auth/signup')}>Sign Up</Button> */}
             </>
           )}
         </nav>
