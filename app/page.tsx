@@ -8,7 +8,7 @@ export default function Home() {
     <div>
       <ImageUploader />
       {/* <Dashboard /> */}
-      {/* <SignUpPage /> */}
+      {/* <SignInPage /> */}
     </div>
   );
 }

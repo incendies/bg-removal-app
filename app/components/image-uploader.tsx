@@ -84,8 +84,8 @@ export function ImageUploader() {
             <Button onClick={() => signOut()}>Sign Out</Button> // Use signOut here
           ) : (
             <>
-              <Button onClick={() => router.push('/auth/signin')}>Sign In</Button>
-              <Button onClick={() => router.push('/auth/signup')}>Sign Up</Button>
+              <Button onClick={() => router.push('/pages/auth/signin')}>Sign In</Button>
+              <Button onClick={() => router.push('/pages/auth/signup')}>Sign Up</Button>
             </>
           )}
         </nav>
