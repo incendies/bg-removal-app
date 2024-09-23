@@ -147,7 +147,7 @@ export function ImageUploader() {
       </main>
 
       <footer className="bg-primary text-primary-foreground p-4 text-center">
-        <p>&copy; 2024 Image Processor. All rights reserved.</p>
+        <p>&copy; 2024 Background Image Processor. All rights reserved.</p>
       </footer>
 
       {fullscreenImage && (
