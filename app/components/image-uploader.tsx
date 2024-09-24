@@ -1,10 +1,10 @@
 'use client'
 
 import { useState, useCallback } from 'react'
-import { Button } from "../components/ui/button"
-import { Input } from "../components/ui/input"
-import { Label } from "../components/ui/label"
-import { removeBg } from '../actions'
+import { Button } from "app/components/ui/button"
+import { Input } from "app/components/ui/input"
+import { Label } from "app/components/ui/label"
+import { removeBg } from 'app/actions'
 import { useRouter } from 'next/navigation'; // Import useRouter for navigation
 import { signIn, signOut, useSession } from "next-auth/react"; // Import signOut and useSession
 
